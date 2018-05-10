@@ -113,6 +113,19 @@ public class SolutionsService {
         reagentRepository.save(new Reagent(reagentId, "2.1", "20 ml", "Pradinis spalvos kalibracinės kreivės tirpalas 500 mg/l Pt", " ", solutionId));
         reagentId = new ObjectId();
         reagentRepository.save(new Reagent(reagentId, " ", "iki 100 ml", "Optiškai skaidrus vanduo", " ", solutionId));
+        solutionId = new ObjectId();
+        solutionRepository.save(new Solution(solutionId, 2.3, "Spalvos savikontrolinis tirpalas 3000 mg/l Pt", "3 mėn. (4± 2)°C", methodId));
+        reagentId = new ObjectId();
+        reagentRepository.save(new Reagent(reagentId, "13", "0,092 g", "Humuso rūgštis", " ", solutionId));
+        reagentId = new ObjectId();
+        reagentRepository.save(new Reagent(reagentId, "40", "4,2 g", "Natrio vandenilio karbonatas", "2018-03", solutionId));
+        reagentId = new ObjectId();
+        reagentRepository.save(new Reagent(reagentId, " ", "iki 500 ml", "Dejonizuotas vanduo", " ", solutionId));
+
+        solutionId = new ObjectId();
+        solutionRepository.save(new Solution(solutionId, 2.4, "Spalvos savikontrolinis darbinis tirpalas 30 Mg/l Pt", "pagaminimo dieną", methodId));
+
+
 
 
     }
