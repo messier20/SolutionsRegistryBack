@@ -1,4 +1,4 @@
-package com.example.solutionsRegistry.beans;
+package com.example.solutionsRegistry.beans.documents;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -16,23 +16,23 @@ public class Solution {
     @NotNull
     private String solutionValidityDuration;
 
-    private ObjectId methodId;
+    private ObjectId id;
 
     public Solution(ObjectId solutionId,
                     @NotNull Double solutionCode,
                     @NotNull String solutionTitle,
                     @NotNull String solutionValidityDuration,
-                    ObjectId methodId
+                    ObjectId id
     ) {
         setSolutionId(solutionId);
         setSolutionCode(solutionCode);
         setSolutionTitle(solutionTitle);
         setSolutionValidityDuration(solutionValidityDuration);
-        setMethodId(methodId);
+        setId(id);
     }
 
-    public void setMethodId(ObjectId methodId) {
-        this.methodId = methodId;
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     public ObjectId getSolutionId() {
@@ -67,7 +67,7 @@ public class Solution {
         this.solutionValidityDuration = solutionValidityDuration;
     }
 
-    public ObjectId getMethodId() {
-        return methodId;
+    public ObjectId getId() {
+        return id;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.solutionsRegistry.beans;
+package com.example.solutionsRegistry.beans.documents;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -7,22 +7,22 @@ import javax.validation.constraints.NotNull;
 
 public class Method {
     @Id
-    public ObjectId methodId;
+    public ObjectId id;
     @NotNull
     private String methodTitle;
 
 
-    public Method(ObjectId methodId, @NotNull String methodTitle) {
-        setMethodId(methodId);
+    public Method(ObjectId id, @NotNull String methodTitle) {
+        setId(id);
         setMethodTitle(methodTitle);
     }
 
-    public ObjectId getMethodId() {
-        return methodId;
+    public ObjectId getId() {
+        return id;
     }
 
-    public void setMethodId(ObjectId methodId) {
-        this.methodId = methodId;
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     public String getMethodTitle() {

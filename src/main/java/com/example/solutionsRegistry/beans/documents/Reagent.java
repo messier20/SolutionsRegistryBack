@@ -1,4 +1,4 @@
-package com.example.solutionsRegistry.beans;
+package com.example.solutionsRegistry.beans.documents;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

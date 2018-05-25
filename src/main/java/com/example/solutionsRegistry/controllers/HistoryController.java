@@ -1,6 +1,6 @@
 package com.example.solutionsRegistry.controllers;
 
-import com.example.solutionsRegistry.beans.SolutionsHistory;
+import com.example.solutionsRegistry.beans.documents.SolutionsHistory;
 import com.example.solutionsRegistry.services.LoggingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

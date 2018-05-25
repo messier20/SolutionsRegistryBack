@@ -1,4 +1,4 @@
-package com.example.solutionsRegistry.beans;
+package com.example.solutionsRegistry.beans.documents;
 
 import java.util.ArrayList;
 import java.util.List;

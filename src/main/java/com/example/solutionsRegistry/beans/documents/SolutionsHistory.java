@@ -1,10 +1,11 @@
-package com.example.solutionsRegistry.beans;
+package com.example.solutionsRegistry.beans.documents;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SolutionsHistory {
@@ -14,18 +15,32 @@ public class SolutionsHistory {
     private Method method;
     @NotNull
     private List<SolutionWithReagents> solutionsWithReagentsList;
+    @NotNull
+    private Date solutionCreationDate;
 
     public SolutionsHistory() {
     }
 
-    public SolutionsHistory(ObjectId id, @NotNull Method method, @NotNull List<SolutionWithReagents> solutionsWithReagents) {
+    public SolutionsHistory(ObjectId id, @NotNull Method method, @NotNull List<SolutionWithReagents> solutionsWithReagents, @NotNull Date solutionCreationDate) {
         setId(id);
         setMethod(method);
+        setSolutionCreationDate(solutionCreationDate);
         setSolutionsWithReagentsList(new ArrayList<>());
         for (SolutionWithReagents solutionWithReagents : solutionsWithReagents) {
             solutionsWithReagentsList.add(solutionWithReagents);
         }
     }
+
+
+//    public SolutionsHistory(ObjectId id, @NotNull Method method, @NotNull List<SolutionWithReagents> solutionsWithReagents, @NotNull Date solutionCreationDate) {
+//        setId(id);
+//        setMethod(method);
+//        setSolutionCreationDate(solutionCreationDate);
+//        setSolutionsWithReagentsList(new ArrayList<>());
+//        for (SolutionWithReagents solutionWithReagents : solutionsWithReagents) {
+//            solutionsWithReagentsList.add(solutionWithReagents);
+//        }
+//    }
 
     public ObjectId getId() {
         return id;
@@ -49,5 +64,13 @@ public class SolutionsHistory {
 
     public void setSolutionsWithReagentsList(List<SolutionWithReagents> solutionsWithReagents) {
         this.solutionsWithReagentsList = solutionsWithReagents;
+    }
+
+    public Date getSolutionCreationDate() {
+        return solutionCreationDate;
+    }
+
+    public void setSolutionCreationDate(Date solutionCreationDate) {
+        this.solutionCreationDate = solutionCreationDate;
     }
 }

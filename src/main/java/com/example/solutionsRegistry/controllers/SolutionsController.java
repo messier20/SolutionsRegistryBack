@@ -1,8 +1,10 @@
 package com.example.solutionsRegistry.controllers;
 
-import com.example.solutionsRegistry.beans.FullMethod;
-import com.example.solutionsRegistry.beans.Solution;
-import com.example.solutionsRegistry.beans.SolutionWithReagents;
+import com.example.solutionsRegistry.beans.documents.FullMethod;
+import com.example.solutionsRegistry.beans.documents.Method;
+import com.example.solutionsRegistry.beans.documents.SolutionWithReagents;
+import com.example.solutionsRegistry.beans.response.FullMethodsResponse;
+import com.example.solutionsRegistry.beans.response.MethodsResponse;
 import com.example.solutionsRegistry.services.SolutionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +22,7 @@ public class SolutionsController {
 
     //    GET
     @RequestMapping(value = "/fullmethod/{id}", method = RequestMethod.GET)
-    public FullMethod getFullMethodById(@PathVariable("id") String id) {
+    public FullMethodsResponse getFullMethodById(@PathVariable("id") String id) {
         return solutionsService.findMethodById2(id);
     }
 
@@ -33,6 +35,11 @@ public class SolutionsController {
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public List<SolutionWithReagents> getAllSolutionsWithReagents() {
         return solutionsService.getAllSolutionsWithReagents();
+    }
+    // GET
+    @RequestMapping(value = "/getMethods", method = RequestMethod.GET)
+    public List<MethodsResponse> getAllMethods(){
+        return solutionsService.getAllMethods();
     }
 
     //POST

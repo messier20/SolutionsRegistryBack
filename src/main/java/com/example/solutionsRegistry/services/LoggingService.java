@@ -1,7 +1,7 @@
 package com.example.solutionsRegistry.services;
 
 
-import com.example.solutionsRegistry.beans.SolutionsHistory;
+import com.example.solutionsRegistry.beans.documents.SolutionsHistory;
 import com.example.solutionsRegistry.repositories.LogRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,7 @@ public class LoggingService {
         newsolutionsHistory.setId(new ObjectId());
         newsolutionsHistory.setMethod(solutionsHistory.getMethod());
         newsolutionsHistory.setSolutionsWithReagentsList(solutionsHistory.getSolutionsWithReagentsList());
+        newsolutionsHistory.setSolutionCreationDate(solutionsHistory.getSolutionCreationDate());
 
         return logRepository.save(newsolutionsHistory);
     }
