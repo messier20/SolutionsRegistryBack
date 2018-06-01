@@ -20,7 +20,9 @@ public class LoggingService {
         SolutionsHistory newsolutionsHistory = new SolutionsHistory();
         newsolutionsHistory.setId(new ObjectId());
         newsolutionsHistory.setMethod(solutionsHistory.getMethod());
-        newsolutionsHistory.setSolutionsWithReagentsList(solutionsHistory.getSolutionsWithReagentsList());
+        newsolutionsHistory.setSolution(solutionsHistory.getSolution());
+        newsolutionsHistory.setReagentsList(solutionsHistory.getReagentsList());
+//        newsolutionsHistory.setSolutionsWithReagentsList(solutionsHistory.getSolutionsWithReagentsList());
         newsolutionsHistory.setSolutionCreationDate(solutionsHistory.getSolutionCreationDate());
 
         return logRepository.save(newsolutionsHistory);
@@ -34,10 +36,12 @@ public class LoggingService {
         return logRepository.findSolutionEntryById(id);
     }
 
+
+//    TODO: fix
     public SolutionsHistory updateEntry(String id, SolutionsHistory updateSolutionsHistory) {
         SolutionsHistory solutionsHistory = logRepository.findSolutionEntryById(id);
         solutionsHistory.setMethod(updateSolutionsHistory.getMethod());
-        solutionsHistory.setSolutionsWithReagentsList(updateSolutionsHistory.getSolutionsWithReagentsList());
+//        solutionsHistory.setSolutionsWithReagentsList(updateSolutionsHistory.getSolutionsWithReagentsList());
         return logRepository.save(solutionsHistory);
     }
 
